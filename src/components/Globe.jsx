@@ -6,7 +6,7 @@ export default function Globe() {
   const [hoveredPin, setHoveredPin] = useState(null);
 
   return (
-    <div className="min-h-screen bg-zinc-900 flex items-center justify-center overflow-hidden">
+    <div className="min-h-screen bg-zinc-900 flex items-center justify-center overflow-x-hidden">
       <div className="relative w-full max-w-screen-2xl h-[80vh] mx-auto">
         <div className="absolute inset-x-0 mx-auto bottom-0 h-full overflow-hidden">
           <img
@@ -34,14 +34,14 @@ export default function Globe() {
             onMouseLeave={() => setHoveredPin(null)}
           >
             <div
-              className={`relative w-3 h-3 rounded-full cursor-pointer bg-red-500 shadow-lg 
+              className={`relative w-3 h-3 rounded-full cursor-pointer  bg-red-500 shadow-lg 
               ${
                 hoveredPin === pin.id
-                  ? "ring-2 ring-red-500/80 ring-offset-2 ring-offset-zinc-900 scale-125"
+                  ? "ring-2 ring-red-500/80 ring-offset-2  ring-offset-zinc-900 scale-125"
                   : "animate-pulse"
               }`}
             >
-              <span className="absolute inset-0 rounded-full bg-red-400 opacity-75 animate-ping"></span>
+              <span className="absolute inset-0  rounded-full bg-red-400 opacity-75 animate-ping"></span>
             </div>
 
             <div
@@ -52,7 +52,7 @@ export default function Globe() {
                   : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
               }`}
             >
-              <div className="w-64 p-4 rounded-xl shadow-2xl backdrop-blur-sm border border-zinc-700/50 bg-zinc-800/80 text-white">
+              <div className="w-64 p-4 rounded-xl shadow-2xl backdrop-blur-sm border z-50 border-zinc-700/50 bg-zinc-800/80 text-white">
                 {pin.imageUrl && (
                   <div className="h-36 w-full relative">
                     <img
