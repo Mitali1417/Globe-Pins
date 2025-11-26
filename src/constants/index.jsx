@@ -1,7 +1,7 @@
 export const pins = [
   {
     id: 1,
-    top: "60%",
+    top: "67%",
     left: "15%",
     city: "San Francisco",
     country: "USA",
@@ -35,7 +35,7 @@ export const pins = [
   },
   {
     id: 3,
-    top: "55%",
+    top: "65%",
     left: "40%",
     city: "Tokyo",
     country: "Japan",
@@ -52,7 +52,7 @@ export const pins = [
   },
   {
     id: 4,
-    top: "23%",
+    top: "43%",
     left: "45%",
     city: "Paris",
     country: "France",
