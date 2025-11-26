@@ -1,5 +1,6 @@
 import { useState } from "react";
 import globeImg from "../../public/globe.png";
+import pinImg from "../../public/pin.png";
 import { pins } from "../constants";
 
 export default function Globe() {
@@ -33,24 +34,21 @@ export default function Globe() {
             onMouseEnter={() => setHoveredPin(pin.id)}
             onMouseLeave={() => setHoveredPin(null)}
           >
-            <div
-              className={`relative w-3 h-3 rounded-full cursor-pointer  bg-red-500 shadow-lg 
-              ${
-                hoveredPin === pin.id
-                  ? "ring-2 ring-red-500/80 ring-offset-2  ring-offset-zinc-900 scale-125"
-                  : "animate-pulse"
-              }`}
-            >
-              <span className="absolute inset-0  rounded-full bg-red-400 opacity-75 animate-ping"></span>
-            </div>
+            <img
+              src={pinImg}
+              alt="Pin"
+              className={`w-12 h-12 transition-all cursor-pointer duration-300
+    ${hoveredPin === pin.id ? "scale-125 drop-shadow-xl" : "scale-100"}
+  `}
+            />
 
             <div
-              className={`absolute left-1/2 -translate-x-1/2 mt-4 transition-all duration-500 ease-out origin-top 
-              ${
-                hoveredPin === pin.id
-                  ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-                  : "opacity-0 scale-95 -translate-y-4 pointer-events-none"
-              }`}
+              className={`absolute left-1/2 -translate-x-1/2 mt-2 transition-all duration-500 ease-out origin-bottom
+    ${
+      hoveredPin === pin.id
+        ? "opacity-100 scale-110 -translate-y-6 pointer-events-auto z-[999]"
+        : "opacity-0 scale-90 -translate-y-2 pointer-events-none z-0"
+    }`}
             >
               <div className="w-64 p-4 rounded-xl shadow-2xl backdrop-blur-sm border z-50 border-zinc-700/50 bg-zinc-800/80 text-white">
                 {pin.imageUrl && (
@@ -64,11 +62,10 @@ export default function Globe() {
                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
                   </div>
                 )}
-                <div className="flex items-center space-x-2 border-b border-zinc-700 pb-2 my-2">
-                  <span className="text-xl">{pin.icon}</span>
+                <div className="flex items-center space-x-2 mt-2">
                   <h3 className="text-lg font-bold text-red-400">{pin.city}</h3>
                 </div>
-                <div className="flex justify-around text-xs text-gray-400 mb-3 border-b border-gray-700/50 pb-3">
+                {/* <div className="flex justify-around text-xs text-gray-400 mb-3 border-b border-gray-700/50 pb-3">
                   {pin.features.map((feature, index) => (
                     <div key={index} className="text-center">
                       <i className={`${feature.icon} text-lg text-red-500`}></i>
@@ -77,16 +74,16 @@ export default function Globe() {
                       </p>
                     </div>
                   ))}
-                </div>
-                <p className="text-sm font-light text-zinc-300 mb-2">
+                </div> */}
+                <p className="text-xs font-light text-zinc-300 mb-2">
                   {pin.description}
                 </p>
-                <div className="flex justify-between text-xs text-zinc-400">
+                {/* <div className="flex justify-between text-xs text-zinc-400">
                   <p>
                     <strong>{pin.country}</strong>
                   </p>
                   <p>{pin.stats}</p>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

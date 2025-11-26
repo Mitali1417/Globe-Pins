@@ -50,7 +50,6 @@ export const pins = [
       { icon: "fa-solid fa-mountain-sun", label: "Nature" },
     ],
   },
-  // --- ADDITIONAL DATA START ---
   {
     id: 4,
     top: "30%",
