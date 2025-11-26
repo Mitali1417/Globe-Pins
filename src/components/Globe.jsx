@@ -29,7 +29,7 @@ export default function Globe() {
         {pins.map((pin) => (
           <div
             key={pin.id}
-            className="absolute transition-all duration-300 ease-out z-10"
+            className="absolute transition-all duration-300 ease-out"
             style={{ top: pin.top, left: pin.left }}
             onMouseEnter={() => setHoveredPin(pin.id)}
             onMouseLeave={() => setHoveredPin(null)}
@@ -37,17 +37,17 @@ export default function Globe() {
             <img
               src={pinImg}
               alt="Pin"
-              className={`w-12 h-12 transition-all cursor-pointer duration-300
+              className={`w-12 h-12 transition-all cursor-pointer  relative duration-300
     ${hoveredPin === pin.id ? "scale-125 drop-shadow-xl" : "scale-100"}
   `}
             />
 
             <div
-              className={`absolute left-1/2 -translate-x-1/2 mt-2 transition-all duration-500 ease-out origin-bottom
+              className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 transition-all duration-500 ease-out origin-bottom
     ${
       hoveredPin === pin.id
-        ? "opacity-100 scale-110 -translate-y-6 pointer-events-auto z-[999]"
-        : "opacity-0 scale-90 -translate-y-2 pointer-events-none z-0"
+        ? "opacity-100 scale-110 translate-y-0 pointer-events-auto z-[999]"
+        : "opacity-0 scale-90 translate-y-2 pointer-events-none z-0"
     }`}
             >
               <div className="w-64 p-4 rounded-xl shadow-2xl backdrop-blur-sm border z-50 border-zinc-700/50 bg-zinc-800/80 text-white">
