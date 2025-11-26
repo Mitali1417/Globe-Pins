@@ -52,8 +52,8 @@ export const pins = [
   },
   {
     id: 4,
-    top: "30%",
-    left: "50%",
+    top: "23%",
+    left: "45%",
     city: "Paris",
     country: "France",
     stats: "Culture Capital, 2.1M Population",
@@ -70,7 +70,7 @@ export const pins = [
   {
     id: 5,
     top: "65%",
-    left: "65%",
+    left: "55%",
     city: "Dubai",
     country: "UAE",
     stats: "Business Hub, 3.1M Population",
@@ -86,8 +86,8 @@ export const pins = [
   },
   {
     id: 6,
-    top: "85%",
-    left: "90%",
+    top: "65%",
+    left: "77%",
     city: "Sydney",
     country: "Australia",
     stats: "Gateway City, 5.3M Population",
